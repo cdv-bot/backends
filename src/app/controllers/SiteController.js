@@ -9,32 +9,32 @@ class NewController {
     res.send(Course);
   }
   productSlideNu(req, res) {
-    const PAGE_SIZE = 16;
-    let page = req.query.page;
-    if (page) {
-      const skipPage = (page - 1) * PAGE_SIZE;
-      productNu
-        .find({})
-        .skip(skipPage)
-        .limit(PAGE_SIZE)
-        .then((data) => {
-          productNu.countDocuments({}).exec((count_error, count) => {
-            res.json({
-              data,
-              page,
-              totalPage: Math.ceil(count / 16),
-            });
-          });
-        });
-    }
-    // productNu.find({}, function (err, docs) {
-    //   if (!err) {
-    //     let data = docs.slice(0, 16);
-    //     res.json(data);
-    //     return;
-    //   }
-    //   res.status(400).json({ error: "error" });
-    // });
+    // const PAGE_SIZE = 16;
+    // let page = req.query.page || 1;
+    // if (page) {
+    //   const skipPage = (page - 1) * PAGE_SIZE;
+    //   productNu
+    //     .find({})
+    //     .skip(skipPage)
+    //     .limit(PAGE_SIZE)
+    //     .then((data) => {
+    //       productNu.countDocuments({}).exec((count_error, count) => {
+    //         res.json({
+    //           data,
+    //           page: Number(page),
+    //           totalPage: Math.ceil(count / 16),
+    //         });
+    //       });
+    //     });
+    // }
+    productNu.find({}, function (err, docs) {
+      if (!err) {
+        let data = docs.slice(0, 16);
+        res.json(data);
+        return;
+      }
+      res.status(400).json({ error: "error" });
+    });
   }
   productSlideNam(req, res) {
     productNam.find({}, function (err, docs) {
