@@ -8,6 +8,10 @@ router.use("/productSlideNam", siteController.productSlideNam);
 router.use("/productSlideGirl", siteController.productSlideGirl);
 router.use("/productSlideBoy", siteController.productSlideBoy);
 router.use("/productSlideAccessories", siteController.productSlideAccessories);
-router.use("/v1", siteController.index);
+router.use("/getProvince", siteController.getProvince);
+router.use("/getDistrict/:id", siteController.getDistrict);
+router.use("/getWard/:province/:district", siteController.getWard);
+
+router.use("/addProducList", siteController.index);
 
 module.exports = router;

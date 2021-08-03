@@ -3,10 +3,11 @@ const productNu = require("../models/ProductNu");
 const productGirl = require("../models/productGirl");
 const productBoy = require("../models/productBoy");
 const productAccessories = require("../models/productAccessories");
+const axios = require("axios");
 class NewController {
   index(req, res) {
-    console.log(Course);
-    res.send(Course);
+    console.log(req.body);
+    res.status(200).json({ a: "AD" });
   }
   productSlideNu(req, res) {
     // const PAGE_SIZE = 16;
@@ -75,6 +76,45 @@ class NewController {
       }
       res.status(400).json({ error: "error" });
     });
+  }
+  getProvince(req, res) {
+    axios
+      .post("https://gw-gddt.baohiemxahoi.gov.vn/api/getDmtinhthanh")
+      .then((x) => res.json(x.data))
+      .catch((x) => {
+        res.status(400).json({ error: "error" });
+      });
+  }
+  getDistrict(req, res) {
+    const id = req.params.id;
+    axios
+      .post("https://gw-gddt.baohiemxahoi.gov.vn/api/getDmquanhuyen", {
+        matinh: id,
+      })
+      .then((x) => res.json(x.data))
+      .catch(() =>
+        res.status(400).json({
+          message: "vui lòng thêm mã tỉnh",
+          status: "error",
+        })
+      );
+  }
+
+  getWard(req, res) {
+    const province = req.params.province;
+    const district = req.params.district;
+    axios
+      .post("https://gw-gddt.baohiemxahoi.gov.vn/api/getDmphuongxa", {
+        matinh: province,
+        mahuyen: district,
+      })
+      .then((x) => res.json(x.data))
+      .catch(() =>
+        res.status(400).json({
+          message: "vui lòng thêm mã tỉnh",
+          status: "error",
+        })
+      );
   }
 }
 
