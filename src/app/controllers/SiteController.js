@@ -3,6 +3,8 @@ const productNu = require("../models/ProductNu");
 const productGirl = require("../models/productGirl");
 const productBoy = require("../models/productBoy");
 const productAccessories = require("../models/productAccessories");
+const Order = require("../models/order");
+const UserId = require("../models/userId");
 const axios = require("axios");
 class NewController {
   index(req, res) {
@@ -10,24 +12,6 @@ class NewController {
     res.status(200).json({ a: "AD" });
   }
   productSlideNu(req, res) {
-    // const PAGE_SIZE = 16;
-    // let page = req.query.page || 1;
-    // if (page) {
-    //   const skipPage = (page - 1) * PAGE_SIZE;
-    //   productNu
-    //     .find({})
-    //     .skip(skipPage)
-    //     .limit(PAGE_SIZE)
-    //     .then((data) => {
-    //       productNu.countDocuments({}).exec((count_error, count) => {
-    //         res.json({
-    //           data,
-    //           page: Number(page),
-    //           totalPage: Math.ceil(count / 16),
-    //         });
-    //       });
-    //     });
-    // }
     productNu.find({}, function (err, docs) {
       if (!err) {
         let data = docs.slice(0, 16);
@@ -115,6 +99,20 @@ class NewController {
           status: "error",
         })
       );
+  }
+  async order(req, res) {
+    const order = new Order({
+      ...req.body,
+    });
+    await order.save();
+    await UserId.findOneAndUpdate(
+      { userId: req.body.userId },
+      { listProduct: [] }
+    );
+    res.status(200).json({
+      message: "Đã thành công.",
+      data: req.body,
+    });
   }
 }
 

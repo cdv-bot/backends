@@ -8,6 +8,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.12",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^2.6.1",
+    "redis": "^3.1.2",
     "yarn": "^1.22.10"
   },
   "devDependencies": {

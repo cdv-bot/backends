@@ -13,5 +13,5 @@ router.use("/getDistrict/:id", siteController.getDistrict);
 router.use("/getWard/:province/:district", siteController.getWard);
 
 router.use("/addProducList", siteController.index);
-
+router.post("/order", siteController.order);
 module.exports = router;
