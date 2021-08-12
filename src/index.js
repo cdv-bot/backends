@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const route = require("./routes");
 
 app.use(express.json());
@@ -21,5 +21,5 @@ route(app);
 //  index => routes => app.use('/', router_con) => router_con('/new/',controller)
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`done`);
 });

@@ -1,8 +1,7 @@
 const express = require("express");
-const UserProduct = require("../app/controllers/UserProduct");
+const productList = require("../app/controllers/productList");
 
 const router = express.Router();
-
 function verifyToken(req, res, next) {
   const bearerHeader = req.headers["token"];
 
@@ -18,11 +17,8 @@ function verifyToken(req, res, next) {
     res.sendStatus(403);
   }
 }
-router.post("/", UserProduct.addId);
-router.post("/login", UserProduct.login);
-router.post("/posttoken", verifyToken, UserProduct.postToken);
-router.post("/logup", UserProduct.logup);
-router.get("/listbuyproduct", verifyToken, UserProduct.list);
-router.get("/verybuy", verifyToken, UserProduct.buy);
+
+router.post("/", verifyToken, productList.commentId);
+router.get("/:idproduct", productList.showComment);
 
 module.exports = router;

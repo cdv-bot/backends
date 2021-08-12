@@ -4,9 +4,14 @@ const productGirl = require("../models/productGirl");
 const productBoy = require("../models/productBoy");
 const productAccessories = require("../models/productAccessories");
 class ProductInfo {
+  comment(req, res) {
+    res.send("Asd");
+  }
+
   index(req, res) {
     res.send("new");
   }
+
   show(req, res) {
     const productNus = productNu.find();
     const productNams = productNam.find();

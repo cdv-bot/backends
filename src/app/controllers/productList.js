@@ -4,8 +4,9 @@ const productNu = require("../models/ProductNu");
 const productBoy = require("../models/productBoy");
 const productGirl = require("../models/productGirl");
 const productPhuKien = require("../models/productAccessories");
+const Comments = require("../models/comment");
 const { remove } = require("../models/userId");
-
+const jwt = require("jsonwebtoken");
 class ProductList {
   index(req, res) {
     res.send("new");
@@ -335,6 +336,46 @@ class ProductList {
               });
             });
         });
+    }
+  }
+  async commentId(req, res) {
+    jwt.verify(req.token, "hacker", async (err, authData) => {
+      if (err) {
+        res.sendStatus(403);
+      } else {
+        const { comment, idProduct, username, name } = req.body;
+        const data = {
+          idProduct,
+          comment: [
+            {
+              [name]: comment,
+            },
+          ],
+        };
+        const dataFind = await Comments.findOne({ idProduct });
+
+        if (dataFind) {
+          dataFind.comment.push({
+            [name]: comment,
+          });
+          dataFind.save();
+        } else {
+          const comment = new Comments(data);
+          comment.save();
+        }
+        res.status(200).json({ [name]: comment });
+      }
+    });
+  }
+  async showComment(req, res) {
+    const idProduct = req.params.idproduct;
+    try {
+      const data = await Comments.findOne({ idProduct });
+      res.status(200).json(data);
+    } catch {
+      res.status(401).json({
+        error: "check_log",
+      });
     }
   }
 }

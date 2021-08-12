@@ -6,5 +6,6 @@ const order = new Schema({
   data: Object,
   product: Array,
   money: Number,
+  check: Boolean,
 });
 module.exports = mongoose.model("Orders", order);
