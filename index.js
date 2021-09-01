@@ -14,7 +14,7 @@ app.use(cors());
 //connect
 db.connect();
 
-route(app);
+// route(app);
 
 //  index => routes => app.use('/', router_con) => router_con('/new/',controller)
 
