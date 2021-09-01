@@ -4,7 +4,7 @@ const siteRouter = require("./Site");
 const userLogin = require("./UserLogin");
 const search = require("./Search");
 const comment = require("./Comment");
-function route(app) {
+function Route(app) {
   app.use("/product", newsRouter);
   app.use("/comment", comment);
   app.use("/", siteRouter);
@@ -13,4 +13,4 @@ function route(app) {
   app.use("/search", search);
 }
 
-module.exports = route;
+module.exports = Route;
