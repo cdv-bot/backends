@@ -6,4 +6,5 @@ const userIdShema = Schema({
   listProduct: Array,
 });
 const UserId = mongoose.model("Userids", userIdShema, "userids");
+
 module.exports = UserId;

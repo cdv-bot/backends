@@ -1,8 +1,8 @@
-const UserId = require("../models/UserId");
+const UserId = require("../models/userId");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const UserLogin = require("../models/UserLogin");
-const { remove } = require("../models/UserId");
+const { remove } = require("../models/userId");
 const order = require("../models/Order");
 const md5 = require("md5");
 class UserProduct {

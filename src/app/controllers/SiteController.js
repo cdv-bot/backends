@@ -4,7 +4,7 @@ const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/ProductBoy");
 const productAccessories = require("../models/ProductAccessories");
 const Order = require("../models/Order");
-const UserId = require("../models/UserId");
+const UserId = require("../models/userId");
 const axios = require("axios");
 class NewController {
   index(req, res) {

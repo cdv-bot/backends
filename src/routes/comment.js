@@ -1,5 +1,5 @@
 const express = require("express");
-const ProductList = require("../app/controllers/ProductList");
+const ProductList = require("../app/controllers/productList");
 
 const Comment = express.Router();
 
