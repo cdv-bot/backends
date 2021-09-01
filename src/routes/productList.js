@@ -1,15 +1,15 @@
 const express = require("express");
 const productList = require("../app/controllers/ProductList");
 
-const ProductList = express.Router();
+const productLists = express.Router();
 
-ProductList.post("/", productList.addShow);
-ProductList.post("/delete", productList.deleteProduct);
-ProductList.post("/edit", productList.editProduct);
-ProductList.get("/nam", productList.productNams);
-ProductList.get("/nu", productList.productListNus);
-ProductList.get("/boy", productList.productListBoys);
-ProductList.get("/girl", productList.productListGirls);
-ProductList.get("/phukien", productList.productListAccessories);
+productLists.post("/", productList.addShow);
+productLists.post("/delete", productList.deleteProduct);
+productLists.post("/edit", productList.editProduct);
+productLists.get("/nam", productList.productNams);
+productLists.get("/nu", productList.productListNus);
+productLists.get("/boy", productList.productListBoys);
+productLists.get("/girl", productList.productListGirls);
+productLists.get("/phukien", productList.productListAccessories);
 
-module.exports = ProductList;
+module.exports = productLists;

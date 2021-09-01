@@ -1,4 +1,4 @@
-const productList = require("./ProductList");
+const productList = require("./productList");
 const newsRouter = require("./News");
 const siteRouter = require("./Site");
 const userLogin = require("./UserLogin");
