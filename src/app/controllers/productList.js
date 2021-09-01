@@ -1,9 +1,9 @@
 const UserId = require("../models/userId");
 const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
-const productBoy = require("../models/productBoy");
+const productBoy = require("../models/ProductBoy");
 const productGirl = require("../models/ProductGirl");
-const productPhuKien = require("../models/productAccessories");
+const productPhuKien = require("../models/ProductAccessories");
 const Comments = require("../models/comment");
 const { remove } = require("../models/userId");
 const jwt = require("jsonwebtoken");
