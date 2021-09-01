@@ -1,5 +1,5 @@
 const express = require("express");
-const productList = require("../app/controllers/productList");
+const productList = require("../app/controllers/ProductList");
 
 const router = express.Router();
 function verifyToken(req, res, next) {
