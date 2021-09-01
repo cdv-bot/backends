@@ -6,7 +6,7 @@ const search = require("./search");
 const comment = require("./comment");
 
 function Route(app) {
-  app.use("/product", newsRouter);
+  // app.use("/product", newsRouter);
   app.use("/comment", comment);
   app.use("/", siteRouter);
   app.use("/user", userLogin);
