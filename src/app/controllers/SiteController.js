@@ -3,8 +3,8 @@ const productNu = require("../models/ProductNu");
 const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/ProductBoy");
 const productAccessories = require("../models/ProductAccessories");
-const Order = require("../models/order");
-const UserId = require("../models/userId");
+const Order = require("../models/Order");
+const UserId = require("../models/UserId");
 const axios = require("axios");
 class NewController {
   index(req, res) {

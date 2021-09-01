@@ -1,12 +1,13 @@
-const userId = require("../models/userId");
+const UserId = require("../models/UserId");
 const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
 const productBoy = require("../models/ProductBoy");
 const productGirl = require("../models/ProductGirl");
 const productPhuKien = require("../models/ProductAccessories");
-const Comments = require("../models/comment");
-const { remove } = require("../models/userId");
+const Comments = require("../models/Comment");
+const { remove } = require("../models/UserId");
 const jwt = require("jsonwebtoken");
+
 class ProductList {
   index(req, res) {
     res.send("new");
