@@ -1,9 +1,9 @@
 const productList = require("./productList");
-const newsRouter = require("./News");
-const siteRouter = require("./Site");
-const userLogin = require("./UserLogin");
-const search = require("./Search");
-const comment = require("./Comment");
+const newsRouter = require("./news");
+const siteRouter = require("./site");
+const userLogin = require("./userLogin");
+const search = require("./search");
+const comment = require("./comment");
 
 function Route(app) {
   app.use("/product", newsRouter);

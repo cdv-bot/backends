@@ -1,7 +1,7 @@
 const express = require("express");
 const ProductList = require("../app/controllers/productList");
 
-const Comment = express.Router();
+const comment = express.Router();
 
 function verifyToken(req, res, next) {
   const bearerHeader = req.headers["token"];
@@ -19,7 +19,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-Comment.post("/", verifyToken, ProductList.commentId);
-Comment.get("/:idproduct", ProductList.showComment);
+comment.post("/", verifyToken, ProductList.commentId);
+comment.get("/:idproduct", ProductList.showComment);
 
-module.exports = Comment;
+module.exports = comment;
