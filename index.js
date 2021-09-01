@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const app = express();
 const port = process.env.PORT || 3001;
-const route = require("./routes");
+const route = require("./src/routes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -12,7 +12,7 @@ var cors = require("cors");
 app.use(cors());
 app.use(morgan("combined"));
 
-const db = require("./config/db");
+const db = require("./src/config/db");
 //connect
 db.connect();
 
