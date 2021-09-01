@@ -1,10 +1,10 @@
 const express = require("express");
 const ProductInfo = require("../app/controllers/ProductInfo");
 
-const News = express.Router();
+const news = express.Router();
 
-News.use("/:id", ProductInfo.show);
-News.use("/name", ProductInfo.index);
-News.get("/comment", ProductInfo.comment);
+news.use("/:id", ProductInfo.show);
+news.use("/name", ProductInfo.index);
+news.get("/comment", ProductInfo.comment);
 
-module.exports = News;
+module.exports = news;
