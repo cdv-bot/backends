@@ -1,5 +1,5 @@
 const express = require("express");
-const productList = require("../app/controllers/ProductList");
+const ProductList = require("../app/controllers/ProductList");
 
 const router = express.Router();
 function verifyToken(req, res, next) {
@@ -18,7 +18,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-router.post("/", verifyToken, productList.commentId);
-router.get("/:idproduct", productList.showComment);
+router.post("/", verifyToken, ProductList.commentId);
+router.get("/:idproduct", ProductList.showComment);
 
 module.exports = router;
