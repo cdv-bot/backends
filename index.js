@@ -1,5 +1,4 @@
 const express = require("express");
-const morgan = require("morgan");
 const app = express();
 const port = process.env.PORT || 3001;
 const route = require("./src/routes");
@@ -10,7 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
 
 app.use(cors());
-app.use(morgan("combined"));
 
 const db = require("./src/config/db");
 //connect
