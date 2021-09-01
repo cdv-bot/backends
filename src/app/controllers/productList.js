@@ -1,4 +1,4 @@
-const UserId = require("../models/userId");
+const userId = require("../models/userId");
 const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
 const productBoy = require("../models/ProductBoy");
