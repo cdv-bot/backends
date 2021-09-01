@@ -1,5 +1,5 @@
 const express = require("express");
-const ProductInfo = require("../app/controllers/ProductInfo");
+const ProductInfo = require("../app/controllers/productInfo");
 
 const news = express.Router();
 
