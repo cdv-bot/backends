@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const UserLogin = require("../models/UserLogin");
 const { remove } = require("../models/userId");
-const order = require("../models/Order");
+const order = require("../models/order");
 const md5 = require("md5");
 class UserProduct {
   async addId(req, res) {

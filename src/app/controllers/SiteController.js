@@ -3,7 +3,7 @@ const productNu = require("../models/ProductNu");
 const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/productBoy.js");
 const productAccessories = require("../models/productaccessories");
-const Order = require("../models/Order");
+const Order = require("../models/order");
 const UserId = require("../models/userId");
 const axios = require("axios");
 class NewController {
