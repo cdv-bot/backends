@@ -3,7 +3,7 @@ const productNu = require("../models/productNus");
 const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/productBoy.js");
 const productAccessories = require("../models/productaccessories");
-class ProductInfo {
+class ProductInfos {
   comment(req, res) {
     res.send("Asd");
   }
@@ -45,4 +45,4 @@ class ProductInfo {
   }
 }
 
-module.exports = new ProductInfo();
+module.exports = new ProductInfos();
