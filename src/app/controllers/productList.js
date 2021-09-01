@@ -1,6 +1,6 @@
 const UserId = require("../models/userId");
 const productNam = require("../models/ProductNam");
-const productNu = require("../models/productNu");
+const productNus = require("../models/productNu");
 const productBoy = require("../models/productBoy.js");
 const productGirl = require("../models/ProductGirl");
 const productPhuKien = require("../models/productaccessories");
@@ -164,12 +164,12 @@ class ProductList {
     let page = req.query.page || 1;
     if (page) {
       const skipPage = (page - 1) * PAGE_SIZE;
-      productNu
+      productNus
         .find(queryField)
         .skip(skipPage)
         .limit(PAGE_SIZE)
         .then((data) => {
-          productNu.countDocuments(queryField).exec((count_error, count) => {
+          productNus.countDocuments(queryField).exec((count_error, count) => {
             res.status(200).json({
               data,
               page: Number(page),

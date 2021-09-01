@@ -1,5 +1,5 @@
 const productNam = require("../models/ProductNam");
-const productNu = require("../models/productNu");
+const productNus = require("../models/productNu");
 const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/productBoy.js");
 const productAccessories = require("../models/productaccessories");
@@ -12,7 +12,7 @@ class NewController {
     res.status(200).json({ a: "AD" });
   }
   productSlideNu(req, res) {
-    productNu.find({}, function (err, docs) {
+    productNus.find({}, function (err, docs) {
       if (!err) {
         let data = docs.slice(0, 16);
         res.json(data);
