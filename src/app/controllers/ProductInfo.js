@@ -2,7 +2,7 @@ const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
 const productGirl = require("../models/ProductGirl");
 const productBoy = require("../models/productBoy.js");
-const productAccessories = require("../models/ProductAccessories");
+const productAccessories = require("../models/productaccessories");
 class ProductInfo {
   comment(req, res) {
     res.send("Asd");

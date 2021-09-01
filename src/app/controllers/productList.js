@@ -3,7 +3,7 @@ const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
 const productBoy = require("../models/productBoy.js");
 const productGirl = require("../models/ProductGirl");
-const productPhuKien = require("../models/ProductAccessories");
+const productPhuKien = require("../models/productaccessories");
 const Comments = require("../models/Comment");
 const jwt = require("jsonwebtoken");
 
