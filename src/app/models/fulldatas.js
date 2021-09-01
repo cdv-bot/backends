@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const fulldatas = new Schema();
-module.exports = mongoose.model("fulldatas", fulldatas);
+const fulldatasSchema = Schema();
+
+const FullData = mongoose.model("Fulldatas", fulldatasSchema, "fulldatas");
+module.exports = FullData;

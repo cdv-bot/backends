@@ -4,7 +4,7 @@ const productNu = require("../models/ProductNu");
 const productBoy = require("../models/productBoy.js");
 const productGirl = require("../models/ProductGirl");
 const productPhuKien = require("../models/productaccessories");
-const Comments = require("../models/Comment");
+const Comments = require("../models/comment");
 const jwt = require("jsonwebtoken");
 
 class ProductList {
