@@ -1,7 +1,7 @@
 const productNam = require("../models/ProductNam");
 const productNu = require("../models/ProductNu");
 const productGirl = require("../models/ProductGirl");
-const productBoy = require("../models/ProductBoy");
+const productBoy = require("../models/productBoy.js");
 const productAccessories = require("../models/ProductAccessories");
 class ProductInfo {
   comment(req, res) {

@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const ProductBoy = new Schema();
-module.exports = mongoose.model("Productboys", ProductBoy);
+const productBoySchema = Schema();
+
+const ProductBoy = mongoose.model(
+  "Productboys",
+  productBoySchema,
+  "productboys"
+);
+module.exports = ProductBoy;
