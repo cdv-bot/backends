@@ -1,4 +1,4 @@
-// const productList = require("./ProductList");
+const productList = require("./ProductList");
 const newsRouter = require("./News");
 const siteRouter = require("./Site");
 const userLogin = require("./UserLogin");
@@ -10,7 +10,7 @@ function Route(app) {
   app.use("/comment", comment);
   app.use("/", siteRouter);
   app.use("/user", userLogin);
-  // app.use("/productlist", productList);
+  app.use("/productlist", productList);
   app.use("/search", search);
 }
 

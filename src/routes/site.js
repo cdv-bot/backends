@@ -1,17 +1,17 @@
 const express = require("express");
 const siteController = require("../app/controllers/SiteController");
 
-const router = express.Router();
+const Site = express.Router();
 
-router.use("/productSlideNu", siteController.productSlideNu);
-router.use("/productSlideNam", siteController.productSlideNam);
-router.use("/productSlideGirl", siteController.productSlideGirl);
-router.use("/productSlideBoy", siteController.productSlideBoy);
-router.use("/productSlideAccessories", siteController.productSlideAccessories);
-router.use("/getProvince", siteController.getProvince);
-router.use("/getDistrict/:id", siteController.getDistrict);
-router.use("/getWard/:province/:district", siteController.getWard);
+Site.use("/productSlideNu", siteController.productSlideNu);
+Site.use("/productSlideNam", siteController.productSlideNam);
+Site.use("/productSlideGirl", siteController.productSlideGirl);
+Site.use("/productSlideBoy", siteController.productSlideBoy);
+Site.use("/productSlideAccessories", siteController.productSlideAccessories);
+Site.use("/getProvince", siteController.getProvince);
+Site.use("/getDistrict/:id", siteController.getDistrict);
+Site.use("/getWard/:province/:district", siteController.getWard);
 
-router.use("/addProducList", siteController.index);
-router.post("/order", siteController.order);
-module.exports = router;
+Site.use("/addProducList", siteController.index);
+Site.post("/order", siteController.order);
+module.exports = Site;
