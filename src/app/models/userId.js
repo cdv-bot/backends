@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const userId = new Schema({
+const userIdShema = Schema({
   userId: String,
   listProduct: Array,
 });
-module.exports = mongoose.model("userids", userId);
+const UserId = mongoose.model("Userids", userIdShema, "userids");
+module.exports = UserId;
