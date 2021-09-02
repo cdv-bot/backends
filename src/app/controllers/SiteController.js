@@ -1,6 +1,6 @@
 const productNam = require("../models/product.nam.js");
 const productNus = require("../models/productNus.js");
-const productGirl = require("../models/productGirl.js");
+const productGirl = require("../models/product.girl.js");
 const productBoy = require("../models/productBoy.js");
 const productAccessories = require("../models/productaccessories.js");
 const Order = require("../models/order.js");
