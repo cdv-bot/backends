@@ -1,7 +1,7 @@
 const UserId = require("../models/userId.js");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const UserLogin = require("../models/UserLogin.js");
+const UserLogin = require("../models/model.login.js");
 const order = require("../models/order.js");
 const md5 = require("md5");
 class UserProduct {
