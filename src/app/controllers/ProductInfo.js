@@ -46,4 +46,4 @@ class ProductInfo {
   }
 }
 
-module.exports = new ProductInfos();
+module.exports = new ProductInfo();

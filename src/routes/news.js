@@ -1,10 +1,10 @@
-// const express = require("express");
-// const ProductInfos = require("../app/controllers/productInfo");
+const express = require("express");
+const ProductInfos = require("../app/controllers/productInfo");
 
-// const news = express.Router();
+const news = express.Router();
 
-// news.use("/:id", ProductInfos.show);
-// news.use("/name", ProductInfos.index);
-// news.get("/comment", ProductInfos.comment);
+news.use("/:id", ProductInfos.show);
+news.use("/name", ProductInfos.index);
+news.get("/comment", ProductInfos.comment);
 
-// module.exports = news;
+module.exports = news;
