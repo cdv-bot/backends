@@ -1,10 +1,10 @@
-const UserId = require("../models/userId");
-const productNam = require("../models/productNam");
-const productNus = require("../models/productNus");
+const UserId = require("../models/userId.js");
+const productNam = require("../models/product.nam.js");
+const productNus = require("../models/productNus.js");
 const productBoy = require("../models/productBoy.js");
-const productGirl = require("../models/productGirl");
-const productPhuKien = require("../models/productaccessories");
-const Comments = require("../models/comment");
+const productGirl = require("../models/productGirl.js");
+const productPhuKien = require("../models/productaccessories.js");
+const Comments = require("../models/comment.js");
 const jwt = require("jsonwebtoken");
 
 class ProductList {

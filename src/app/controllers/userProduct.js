@@ -1,9 +1,8 @@
-const UserId = require("../models/userId");
+const UserId = require("../models/userId.js");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const UserLogin = require("../models/UserLogin");
-const { remove } = require("../models/userId");
-const order = require("../models/order");
+const UserLogin = require("../models/UserLogin.js");
+const order = require("../models/order.js");
 const md5 = require("md5");
 class UserProduct {
   async addId(req, res) {

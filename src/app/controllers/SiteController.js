@@ -1,10 +1,10 @@
-const productNam = require("../models/productNam");
-const productNus = require("../models/productNus");
-const productGirl = require("../models/productGirl");
+const productNam = require("../models/product.nam.js");
+const productNus = require("../models/productNus.js");
+const productGirl = require("../models/productGirl.js");
 const productBoy = require("../models/productBoy.js");
-const productAccessories = require("../models/productaccessories");
-const Order = require("../models/order");
-const UserId = require("../models/userId");
+const productAccessories = require("../models/productaccessories.js");
+const Order = require("../models/order.js");
+const UserId = require("../models/userId.js");
 const axios = require("axios");
 class NewController {
   index(req, res) {
