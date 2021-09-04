@@ -1,9 +1,9 @@
 const express = require("express");
-const ProductInfos = require("../app/controllers/controller.info.js");
+const ProductInfos = require("../app/controllers/controller.info");
 
 const news = express.Router();
 
-news.use("/:id", ProductInfos.show);
+news.get("/:numberid", ProductInfos.show);
 news.use("/name", ProductInfos.index);
 news.get("/comment", ProductInfos.comment);
 

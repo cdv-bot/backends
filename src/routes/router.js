@@ -1,17 +1,17 @@
+const express = require("express");
 const productList = require("./productList");
 const newsRouter = require("./news");
 const siteRouter = require("./site");
 const userLogin = require("./userLogin");
 const search = require("./search");
 const comment = require("./comment");
+const Router = express();
 
-function Route(app) {
-  app.use("/product", newsRouter);
-  app.use("/comment", comment);
-  app.use("/", siteRouter);
-  app.use("/user", userLogin);
-  app.use("/productlist", productList);
-  app.use("/search", search);
-}
+Router.use("/", siteRouter);
+Router.use("/product", newsRouter);
+Router.use("/comment", comment);
+Router.use("/user", userLogin);
+Router.use("/productlist", productList);
+Router.use("/search", search);
 
-module.exports = Route;
+module.exports = Router;

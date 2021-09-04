@@ -1,4 +1,4 @@
-const fulldata = require("../models/fulldatas.js");
+const fulldata = require("../models/fulldata");
 
 const NodeCache = require("node-cache");
 

@@ -66,15 +66,11 @@ class UserProduct {
     }
   }
   postToken(req, res) {
-    jwt.verify(req.token, "hacker", (err, authData) => {
-      if (err) {
-        res.sendStatus(403);
-      } else {
-        res.json({
-          message: "done",
-          authData,
-        });
-      }
+    console.log(req.data);
+
+    res.json({
+      message: "done",
+      authData: req.data,
     });
   }
   async logup(req, res) {

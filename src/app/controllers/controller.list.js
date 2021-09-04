@@ -77,12 +77,6 @@ class ProductList {
     }
   }
   async productNams(req, res) {
-    const formatMoney = (value) => {
-      const regex = /[0-9]/g;
-      const stringMoney = value.match(regex).join(",").replaceAll(",", "");
-      return Number(stringMoney);
-    };
-
     const rangeStart = Number(req.query.range ? req.query.range[0] : 0);
     const rangeEnd = Number(req.query.range ? req.query.range[1] : 2000000);
     const color = req.query.color;
@@ -129,12 +123,6 @@ class ProductList {
     }
   }
   async productListNus(req, res) {
-    const formatMoney = (value) => {
-      const regex = /[0-9]/g;
-      const stringMoney = value.match(regex).join(",").replaceAll(",", "");
-      return Number(stringMoney);
-    };
-
     const rangeStart = Number(req.query.range ? req.query.range[0] : 0);
     const rangeEnd = Number(req.query.range ? req.query.range[1] : 2000000);
     const color = req.query.color;
@@ -162,6 +150,7 @@ class ProductList {
 
     const PAGE_SIZE = 16;
     let page = req.query.page || 1;
+
     if (page) {
       const skipPage = (page - 1) * PAGE_SIZE;
       productNus
@@ -377,6 +366,11 @@ class ProductList {
         error: "check_log",
       });
     }
+  }
+  productError(req, res) {
+    res.status(401).json({
+      error: true,
+    });
   }
 }
 

@@ -1,5 +1,5 @@
 const express = require("express");
-const productList = require("../app/controllers/controller.list.js");
+const productList = require("../app/controllers/controller.list");
 
 const productLists = express.Router();
 
@@ -11,5 +11,6 @@ productLists.get("/nu", productList.productListNus);
 productLists.get("/boy", productList.productListBoys);
 productLists.get("/girl", productList.productListGirls);
 productLists.get("/phukien", productList.productListAccessories);
+productLists.get("*", productList.productError);
 
 module.exports = productLists;

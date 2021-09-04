@@ -1,8 +1,9 @@
-const productNam = require("../models/product.nam.js");
-const productNu = require("../models/product.nu.js");
-const productGirl = require("../models/product.girl.js");
-const productBoy = require("../models/product.boy.js");
-const productAccessories = require("../models/product.accessories.js");
+const productNam = require("../models/product.nam");
+const productNu = require("../models/product.nu");
+const productGirl = require("../models/product.girl");
+const productBoy = require("../models/product.boy");
+const dataFull = require("../models/fulldata");
+const productAccessories = require("../models/product.accessories");
 
 class ProductInfo {
   comment(req, res) {
@@ -13,30 +14,14 @@ class ProductInfo {
     res.send("new");
   }
 
-  show(req, res) {
-    const productNus = productNu.find();
-    const productNams = productNam.find();
-    const productGirls = productGirl.find();
-    const productBoys = productBoy.find();
-    const productAccessoriess = productAccessories.find();
-
-    Promise.all([
-      productNus,
-      productNams,
-      productGirls,
-      productBoys,
-      productAccessoriess,
-    ]).then((values) => {
-      const dataAll = values.reduce((x, y) => {
-        x.push(...y);
-        return x;
-      }, []);
-      const ids = req.params.id;
-      const datas = dataAll.find((item) => {
-        return item._id == ids;
-      });
-      res.json(datas);
-    });
+  async show(req, res) {
+    try {
+      const numberid = req.params.numberid;
+      const data = await dataFull.findOne({ maSp: numberid });
+      res.json(data);
+    } catch {
+      res.status(401);
+    }
   }
   productList(req, res) {
     console.log("ÁD");
