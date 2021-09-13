@@ -24,7 +24,6 @@ class ProductInfo {
     }
   }
   productList(req, res) {
-    console.log("ÁD");
     // const data = req.body;
     // console.log(data);
     res.json({ d: "sdasd" });

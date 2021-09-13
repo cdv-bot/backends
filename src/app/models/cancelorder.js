@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const orderShema = Schema({
+const cancelOrderShema = Schema({
+  _id: String,
   checkout: Boolean,
   tinh: String,
   huyen: String,
@@ -12,5 +13,9 @@ const orderShema = Schema({
   userId: String,
   address: String,
 });
-const Order = mongoose.model("Orders", orderShema, "orders");
-module.exports = Order;
+const cancelOrder = mongoose.model(
+  "Cancelorders",
+  cancelOrderShema,
+  "cancelorders"
+);
+module.exports = cancelOrder;

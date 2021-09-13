@@ -22,6 +22,8 @@ const app = express();
 //security xss
 app.use(helmet());
 
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));
 //save log
 const accessLogStream = rfs.createStream("access.log", {
   interval: "1d",
